@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string("lon");
             $table->date("last_feed");
             $table->foreignId("last_feed_user_id")->constrained("users")->onUpdate("cascade")->onDelete("cascade");
-            $table->string("note");
+            $table->string("note")->nullable();
             $table->timestamps();
         });
     }

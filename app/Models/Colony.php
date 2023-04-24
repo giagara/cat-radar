@@ -66,4 +66,8 @@ class Colony extends Model
         return $this->hasOne(User::class, "last_feed_user_id");
     }
 
+    public function cats(){
+        return $this->hasMany(Cat::class);
+    }
+
 }

@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources;
 
+use App\Filament\Resources\ColonyReourceResource\RelationManagers\CatsRelationManager;
 use App\Filament\Resources\ColonyResource\Pages;
 use App\Filament\Resources\ColonyResource\RelationManagers;
 use App\Models\Colony;
@@ -82,6 +83,7 @@ class ColonyResource extends Resource
                 Tables\Columns\TextColumn::make('name')->sortable()->label("Nome"),
                 Tables\Columns\TextColumn::make('lat')->sortable()->label("Latitudine"),
                 Tables\Columns\TextColumn::make('lon')->sortable()->label("Longitudine"),
+                Tables\Columns\TextColumn::make('cats_count')->counts('cats')->label("Numero gatti"),
             ])
             ->filters([
                 //
@@ -97,7 +99,7 @@ class ColonyResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            CatsRelationManager::class
         ];
     }
 

@@ -13,12 +13,15 @@ class Cat extends Model
 
     protected $fillable = [
         "uuid",
+        "serial",
+        "colony_id",
         "name",
         "color",
         "sterilized",
         "birth_date",
         "last_seen_at",
         "last_seen_user_id",
+        "picture",
         "note",
     ];
 
@@ -27,4 +30,8 @@ class Cat extends Model
         "birth_date" => "date",
         "last_seen_at" => "date",
     ];
+
+    public function colony(){
+        return $this->belongsTo(Colony::class);
+    }
 }

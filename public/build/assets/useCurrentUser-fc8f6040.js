@@ -1,1 +1,0 @@
-import{q as s}from"./app-09ab4485.js";class t{constructor(r={}){Object.assign(this,r)}get initials(){return this.name.split(" ").map(r=>r[0]).join("")}}function i(){return new t(s().props.auth.user)}export{i as u};

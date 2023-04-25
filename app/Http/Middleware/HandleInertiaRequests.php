@@ -39,6 +39,9 @@ class HandleInertiaRequests extends Middleware
                     'location' => $request->url(),
                 ]);
             },
+            'catradar' => [
+                "recaptcha_site_key" => config('catradar.recaptcha_site_key')
+            ]
         ]);
     }
 }
